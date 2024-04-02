@@ -1,4 +1,4 @@
-package com.nelsonquintanilla.cryptocurrencyapp.ui.theme
+package com.nelsonquintanilla.cryptocurrencyapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

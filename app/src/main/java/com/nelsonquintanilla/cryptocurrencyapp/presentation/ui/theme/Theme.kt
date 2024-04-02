@@ -1,4 +1,4 @@
-package com.nelsonquintanilla.cryptocurrencyapp.ui.theme
+package com.nelsonquintanilla.cryptocurrencyapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

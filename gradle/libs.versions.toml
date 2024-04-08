@@ -10,6 +10,8 @@ activityCompose = "1.8.2"
 composeBom = "2024.03.00"
 navigationCompose = "2.7.7"
 composeFoundation = "1.6.4"
+retrofit = "2.11.0"
+gson = "2.10.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -39,9 +41,9 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 # Hilt
 
 # Retrofit
-
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-

@@ -64,6 +64,8 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.hilt)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.compiler)
 //    implementation(libs.androidx.lifecycle.viewmodel.compose)
 //    implementation(libs.androidx.navigation.compose)

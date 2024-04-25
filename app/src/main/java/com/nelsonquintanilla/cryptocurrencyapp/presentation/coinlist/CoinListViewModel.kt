@@ -9,9 +9,10 @@ import com.nelsonquintanilla.cryptocurrencyapp.domain.usecase.getcoins.GetCoinsU
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 @HiltViewModel
-class CoinListViewModel(
+class CoinListViewModel @Inject constructor(
     private val getCoinsUseCase: GetCoinsUseCase
 ) : ViewModel() {
 

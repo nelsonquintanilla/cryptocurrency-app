@@ -11,9 +11,10 @@ import com.nelsonquintanilla.cryptocurrencyapp.domain.usecase.getcoin.GetCoinDet
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 @HiltViewModel
-class CoinDetailViewModel(
+class CoinDetailViewModel @Inject constructor(
     private val getCoinDetailUseCase: GetCoinDetailUseCase,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {

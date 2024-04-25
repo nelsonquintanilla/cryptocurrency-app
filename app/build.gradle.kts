@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.11"
+        kotlinCompilerExtensionVersion = "1.5.12"
     }
     packaging {
         resources {
@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.hilt)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.foundation)
     ksp(libs.hilt.compiler)
 
     testImplementation(libs.junit)

@@ -21,7 +21,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -54,7 +53,7 @@ fun CoinDetailScreen(
                         )
                         Text(
                             text = if (coin.isActive) "active" else "inactive",
-                            color = if (coin.isActive) Color.Green else Color.Red,
+                            color = if (coin.isActive) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
                             fontStyle = FontStyle.Italic,
                             textAlign = TextAlign.End,
                             style = MaterialTheme.typography.bodyMedium,

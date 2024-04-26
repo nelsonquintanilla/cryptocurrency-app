@@ -32,7 +32,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 # Retrofit
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-# TODO: Replace gson converter with Moshi
+# TODO: Replace gson converter with KotlinX converter
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 # Hilt
 hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }

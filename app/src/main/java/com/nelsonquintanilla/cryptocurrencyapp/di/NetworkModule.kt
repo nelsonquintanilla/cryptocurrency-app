@@ -8,31 +8,44 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Call
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+object NetworkModule {
 
     @Provides
-    fun provideCoinPaprikaApi(): CoinPaprikaApi {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
-
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
+    @Singleton
+    fun providesOkHttpCallFactory(): Call.Factory {
+        return OkHttpClient.Builder()
+            .addInterceptor(
+                HttpLoggingInterceptor()
+                    .apply {
+                        setLevel(HttpLoggingInterceptor.Level.BODY)
+                    }
+            )
             .build()
+    }
 
+    @Provides
+    fun providesRetrofit(okhttpCallFactory: dagger.Lazy<Call.Factory>): Retrofit {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
+            // I use callFactory lambda here with dagger.Lazy<Call.Factory>
+            // to prevent initializing OkHttp on the main thread.
+            .callFactory { okhttpCallFactory.get().newCall(it) }
             .addConverterFactory(GsonConverterFactory.create())
-            .client(okHttpClient)
             .build()
-            .create(CoinPaprikaApi::class.java)
+    }
+
+    @Provides
+    fun providesCoinPaprikaApi(retrofit: Retrofit): CoinPaprikaApi {
+        return retrofit.create(CoinPaprikaApi::class.java)
     }
 
     // TODO: Refactor to put this function in another module with Binds

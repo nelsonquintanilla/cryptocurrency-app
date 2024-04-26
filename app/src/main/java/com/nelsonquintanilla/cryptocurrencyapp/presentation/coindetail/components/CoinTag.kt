@@ -2,6 +2,7 @@ package com.nelsonquintanilla.cryptocurrencyapp.presentation.coindetail.componen
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -21,6 +22,7 @@ fun CoinTag(
                 color = MaterialTheme.colorScheme.primary,
                 shape = RoundedCornerShape(100.dp)
             )
+            .padding(10.dp)
     ) {
         Text(
             text = tag,

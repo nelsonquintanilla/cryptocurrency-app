@@ -23,12 +23,12 @@ fun TeamListItem(
     ) {
         Text(
             text = teamMember.name,
-            style = MaterialTheme.typography.headlineSmall
+            style = MaterialTheme.typography.bodyLarge
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = teamMember.position,
-            style = MaterialTheme.typography.displayMedium,
+            style = MaterialTheme.typography.bodyMedium,
             fontStyle = FontStyle.Italic
         )
     }

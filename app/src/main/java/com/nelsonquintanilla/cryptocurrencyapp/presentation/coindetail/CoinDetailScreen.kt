@@ -75,11 +75,9 @@ fun CoinDetailScreen(
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     FlowRow(
+                        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.Start),
+                        verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Top),
                         modifier = Modifier
-                            .padding(
-                                horizontal = 10.dp,
-                                vertical = 15.dp
-                            )
                             .fillMaxWidth()
                     ) {
                         coin.tags.forEach { tag ->
@@ -92,7 +90,6 @@ fun CoinDetailScreen(
                         style = MaterialTheme.typography.headlineSmall
                     )
                     Spacer(modifier = Modifier.height(16.dp))
-
                 }
                 items(coin.team) { teamMember ->
                     TeamListItem(

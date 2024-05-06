@@ -1,5 +1,5 @@
 # Cryptocurrency App (WIP 🚧)
-This is an app using the latest Jetpack Libraries to build a responsive Android app that show information about all cryptocoins.
+A modern Android application built with the latest Jetpack libraries, designed to provide a seamless and responsive user experience. This app offers an extensive view into the cryptocurrency market, allowing users to explore detailed information about a wide range of digital coins and tokens.
 
 The information is obtained through CoinPaprika's API: https://coinpaprika.com
 
